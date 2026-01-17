@@ -5,12 +5,12 @@ const FriendRequestCard = () => {
     <div className="bg-white rounded-lg shadow-sm p-4 mb-4">
       <div className="flex items-center gap-3 mb-3">
         <img
-          src="https://i.pravatar.cc/150?img=56"
-          alt="Sahas Edirisinghe"
+          src="/sahas_pp.jpg"
+          alt="Sahas Weerawarna"
           className="w-14 h-14 rounded-full object-cover"
         />
         <div className="flex-1">
-          <p className="font-semibold text-sm text-black">Sahas Edirisinghe sent you a friend request</p>
+          <p className="font-semibold text-sm text-black">Sahas Weerawarna sent you a friend request</p>
           <p className="text-xs text-fb-dark-gray mt-1">2 years ago</p>
         </div>
       </div>

@@ -41,7 +41,9 @@ const Layout = () => {
       <Navbar onFriendRequestClick={handleFriendRequestClick} />
       <div className="flex pt-14">
         <LeftSidebar />
-        <Feed />
+        <div className="flex-1 flex justify-center">
+          <Feed />
+        </div>
         <div className="hidden xl:block">
           <RightSidebar />
         </div>

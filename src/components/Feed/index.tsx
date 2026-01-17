@@ -5,7 +5,7 @@ import { posts } from '../../data/mockData';
 
 const Feed = () => {
   return (
-    <div className="flex-1 max-w-2xl w-full px-4 pt-4 md:ml-64 xl:mr-80">
+    <div className="max-w-2xl w-full px-4 pt-4">
       <Composer />
       <StoriesRow />
       {posts.map((post) => (

@@ -1,4 +1,4 @@
-import { X, Check, ExternalLink } from 'lucide-react';
+import { X, Check, ExternalLink, Search, MoreHorizontal, Gift } from 'lucide-react';
 import { sponsored, friendRequests } from '../data/mockData';
 import { birthdays } from '../data/mockData';
 
@@ -66,16 +66,49 @@ const RightSidebar = () => {
       </div>
 
       {/* Birthdays */}
-      <div>
+      <div className="mb-6">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-xs font-semibold text-fb-dark-gray">Birthdays</h3>
         </div>
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-2xl">🎂</span>
-          <p className="text-sm">
-            <span className="font-semibold">{birthdays[0]?.name}</span> and{' '}
-            <span className="font-semibold">{birthdays[1]?.name}</span> have birthdays today.
+          <Gift className="w-5 h-5 text-fb-blue" />
+          <p className="text-sm text-black">
+            <span className="font-semibold">{birthdays[0]?.name}</span> and 7 others have their birthdays today.
           </p>
+        </div>
+      </div>
+
+      {/* Contacts */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-xs font-semibold text-fb-dark-gray">Contacts</h3>
+          <div className="flex items-center gap-2">
+            <button className="w-8 h-8 rounded-full hover:bg-fb-gray flex items-center justify-center transition-colors">
+              <Search className="w-4 h-4 text-gray-600" />
+            </button>
+            <button className="w-8 h-8 rounded-full hover:bg-fb-gray flex items-center justify-center transition-colors">
+              <MoreHorizontal className="w-4 h-4 text-gray-600" />
+            </button>
+          </div>
+        </div>
+        <div className="space-y-2">
+          {[
+            { id: '1', name: 'Loshan Ruwanpathirana', avatar: 'https://i.pravatar.cc/150?img=58' },
+            { id: '2', name: 'Shehanka Dassanayake', avatar: 'https://i.pravatar.cc/150?img=59' },
+            { id: '3', name: 'Sachithra Wijesinghe', avatar: 'https://i.pravatar.cc/150?img=60' },
+          ].map((contact) => (
+            <div key={contact.id} className="flex items-center gap-2 hover:bg-fb-gray rounded-lg p-2 cursor-pointer">
+              <div className="relative">
+                <img
+                  src={contact.avatar}
+                  alt={contact.name}
+                  className="w-9 h-9 rounded-full object-cover"
+                />
+                <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+              </div>
+              <span className="text-sm text-black font-medium">{contact.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </aside>

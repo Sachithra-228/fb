@@ -18,6 +18,16 @@ export interface Post {
   image: string;
   likes: number;
   comments: number;
+  type?: 'relationship' | 'normal';
+  relationshipWith?: string;
+}
+
+export interface Comment {
+  id: string;
+  user: User;
+  text: string;
+  time: string;
+  likes?: number;
 }
 
 export interface MenuItem {

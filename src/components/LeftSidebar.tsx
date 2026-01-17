@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Sparkles, Users, Briefcase, Clock, Bookmark, UsersRound, Video, ChevronDown } from 'lucide-react';
 import { currentUser, menuItems, shortcuts } from '../data/mockData';
 
@@ -13,10 +14,19 @@ const iconMap: Record<string, any> = {
 };
 
 const LeftSidebar = () => {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate('/profile/nikini-weerasinghe');
+  };
+
   return (
     <aside className="hidden md:block fixed left-0 top-14 w-64 h-[calc(100vh-3.5rem)] overflow-y-auto bg-white pt-4 px-2">
       {/* Profile Row */}
-      <div className="flex items-center gap-3 px-2 py-2 hover:bg-fb-gray rounded-lg cursor-pointer mb-1">
+      <div 
+        onClick={handleProfileClick}
+        className="flex items-center gap-3 px-2 py-2 hover:bg-fb-gray rounded-lg cursor-pointer mb-1"
+      >
         <img
           src={currentUser.avatar}
           alt={currentUser.name}

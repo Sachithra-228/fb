@@ -51,7 +51,8 @@ const NotificationsDropdown = ({ isOpen, onClose, onFriendRequestClick }: Notifi
   return (
     <div
       ref={dropdownRef}
-      className="absolute top-full right-4 mt-2 w-96 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-[600px] overflow-y-auto z-50"
+      className="absolute top-full right-4 mt-2 w-96 bg-white rounded-lg shadow-2xl border border-gray-200 max-h-[500px] overflow-y-auto z-50 scroll-smooth"
+      style={{ scrollBehavior: 'smooth' }}
     >
       <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         <h2 className="text-xl font-bold text-black">Notifications</h2>
@@ -79,7 +80,7 @@ const NotificationsDropdown = ({ isOpen, onClose, onFriendRequestClick }: Notifi
           <button className="text-xs text-fb-blue hover:underline">See all</button>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           {notifications.map((notification) => (
             <div
               key={notification.id}
@@ -88,7 +89,7 @@ const NotificationsDropdown = ({ isOpen, onClose, onFriendRequestClick }: Notifi
                   onFriendRequestClick(notification.user.name, notification.user.avatar, notification.time);
                 }
               }}
-              className="flex items-start gap-3 p-2 hover:bg-fb-gray rounded-lg cursor-pointer relative"
+              className="flex items-start gap-3 p-3 hover:bg-fb-gray rounded-lg cursor-pointer relative transition-colors"
             >
               <div className="relative flex-shrink-0">
                 {notification.user ? (
@@ -119,8 +120,8 @@ const NotificationsDropdown = ({ isOpen, onClose, onFriendRequestClick }: Notifi
               </div>
 
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-gray-800 leading-snug">{notification.text}</p>
-                <p className="text-xs text-gray-500 mt-1">{notification.time}</p>
+                <p className="text-sm text-black leading-relaxed font-medium">{notification.text}</p>
+                <p className="text-xs text-gray-500 mt-1.5">{notification.time}</p>
               </div>
 
               {notification.isUnread && (
