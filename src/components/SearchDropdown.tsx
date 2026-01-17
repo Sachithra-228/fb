@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Search, Clock } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { searchableUsers } from '../data/searchData';
 
 interface SearchDropdownProps {

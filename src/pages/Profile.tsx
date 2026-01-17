@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Briefcase, GraduationCap, MapPin, Home, Heart, Filter, BarChart3, Pencil, MoreVertical, Globe, List, Grid, MessageCircle, Check, X } from 'lucide-react';
+import { Briefcase, GraduationCap, MapPin, Home, Heart, Filter, BarChart3, Pencil, MoreVertical, List, Grid, MessageCircle, Check, X } from 'lucide-react';
 import PostCard from '../components/Feed/PostCard';
 import { sahasProfile } from '../data/profileData';
 import { nikiniProfile } from '../data/nikiniProfileData';

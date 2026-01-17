@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ThumbsUp, MessageCircle, Share2, MoreVertical, Music } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
@@ -65,8 +64,6 @@ const reels: Reel[] = [
 ];
 
 const Reels = () => {
-  const [currentReel, setCurrentReel] = useState(0);
-
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
     if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
@@ -85,7 +82,7 @@ const Reels = () => {
 
           {/* Video Container */}
           <div className="h-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide">
-            {reels.map((reel, index) => (
+            {reels.map((reel) => (
               <div
                 key={reel.id}
                 className="h-full w-full snap-start relative flex items-center justify-center flex-shrink-0"

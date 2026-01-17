@@ -1,4 +1,4 @@
-import { Search, Settings, Users, Plus } from 'lucide-react';
+import { Search, Plus } from 'lucide-react';
 import Navbar from '../components/Navbar';
 
 interface Group {
